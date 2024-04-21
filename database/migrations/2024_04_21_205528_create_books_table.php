@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->string('title');
+            $table->string('slug', 100)->unique();
             $table->boolean('published')->default(false);
             $table->timestamps();
         });
